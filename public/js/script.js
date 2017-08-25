@@ -221,7 +221,6 @@ function getList() {
         row += "<td>" + (i+1) + "</td>";
         row += "<td>" + unit[i].time + "</td>";
         row += "<td>" + unit[i].name + "</td>";
-        row += "<td>" + unit[i].driver + "</td>";
 
         if (unit[i].geofence != ''){
             row += "<td>" + unit[i].geofence + "</td>";
@@ -240,11 +239,13 @@ function getList() {
             }else if (unit[i].geofence == 'IRS' || unit[i].geofence == 'IVI' || unit[i].geofence == 'IPCI'){
                 row += "<td>CUST</td>";
             }else {
-                row += "<td><input type='text' class='form-control'></td>";
+                row += "<td><input id='status"+i+"' type='text' class='form-control status-field'><span id='status-display"+i+"' class='hidden'></span></td>";
             }
         }else {
-            row += "<td><input type='text' class='form-control'></td>";
+            row += "<td><input id='status"+i+"' type='text' class='form-control status-field'><span id='status-display"+i+"' class='hidden'></span></td>";
         }
+
+        row += "<td><input id='muat"+i+"' type='text' class='form-control muat-field'><span id='muat-display"+i+"' class='hidden'></span></td>";
 
         row += "</tr>";
 
@@ -259,11 +260,7 @@ $(document).ready(function () {
     var sess = wialon.core.Session.getInstance().initSession("https://hst-api.wialon.com"); // init session
     // For more info about how to generate token check
     // http://sdk.wialon.com/playground/demo/app_auth_token
-    console.log(sess)
-
-    if (!sess){
-
-    }
+    console.log(sess);
 
     var storedToken = '';
 
@@ -273,7 +270,11 @@ $(document).ready(function () {
     wialon.core.Session.getInstance().loginToken(storedToken, "", // try to login
         function (code) { // login callback
             // if error code - print error message
-            if (code){ msg(wialon.core.Errors.getErrorText(code)); return; }
+            if (code){
+                msg(wialon.core.Errors.getErrorText(code));
+                return;
+            }
+
             msg("Logged successfully"); init(); // when login suceed then run init() function
         });
 
@@ -330,10 +331,42 @@ $(document).ready(function () {
         }
     }
 
+    function genereateSpanFromInput() {
+        var unit = JSON.parse(localStorage.getItem("list_units"));
+
+        for (i = 0 ; i < unit.length ; i++){
+            var display_id = "#status-display"+i;
+            var input_id = "#status"+i;
+            var input_value = $(input_id).val();
+
+            if (input_value == undefined){
+                input_value = '';
+            }
+
+            $(display_id).text(input_value);
+
+
+            var display_id_2 = "#muat-display"+i;
+            var input_id_2 = "#muat"+i;
+            var input_value_2 = $(input_id_2).val();
+
+            if (input_value_2 == undefined){
+                input_value_2 = '';
+            }
+
+            $(display_id_2).text(input_value_2);
+        }
+
+        exportTableToCSV.apply(this, [$('#data-table'), 'export.csv']);
+    }
+
     // This must be a hyperlink
     $("#download").on('click', function (event) {
 
+        genereateSpanFromInput();
+
         exportTableToCSV.apply(this, [$('#data-table'), 'export.csv']);
+        /*exportTableToCSV.apply(this, [$('#data-table'), 'export.csv']);*/
 
         // IF CSV, don't do event.preventDefault() or return false
         // We actually need this to be a typical hyperlink
@@ -343,6 +376,19 @@ $(document).ready(function () {
         document.getElementById("create-list").setAttribute("disabled", "");
         document.getElementById("download").removeAttribute("disabled");
     })
+
+    $('#refresh').on('click', function (event) {
+        $('#refresh i').addClass('fa-spin');
+    })
+
+
+    /*$("#test-field").on("input", function() {
+        var span = "#"+this.id+" #test-display";
+        var text = $(this).val()
+
+        $("#test-display").text(text); // <= Change on this line
+    });*/
+
 });
 
 

@@ -29,7 +29,7 @@
                                        {{-- <button id="send" type="button" class="btn btn-default btn-info" disabled> <i class="fa fa-envelope"></i>  Send Email</button>--}}
                                     </div>
                                     <div class="col-md-3">
-                                        <button id="refresh" type="button" class="btn btn-default btn-warning" onclick="refreshPage()"><i class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i>  Refresh Page</button>
+                                        <button id="refresh" type="button" class="btn btn-default btn-warning" onclick="refreshPage()"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i>  Refresh Page</button>
                                     </div>
                                 </div>
 
@@ -43,11 +43,10 @@
                                                 <th>No.</th>
                                                 <th>Time</th>
                                                 <th>Unit</th>
-                                                <th>Driver</th>
                                                 <th>Geofence</th>
                                                 <th>Position</th>
                                                 <th>Status</th>
-                                                <th class="hidden">Muat/Bongkar</th>
+                                                <th>Muat/Bongkar</th>
                                             </tr>
                                         </thead>
                                         <tbody id="unit-list">
