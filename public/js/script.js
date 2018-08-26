@@ -115,11 +115,11 @@ function init() { // Execute after login succeed
                         if (code) { msg(wialon.core.Errors.getErrorText(code)); return; } // exit if error code
 
                         countSpan++;
-                        console.log(countSpan);
 
                         if (countSpan > 70){
                             document.getElementById("create-list").removeAttribute("disabled");
                         }
+
                         $("#location").append("<span>"+ address+"</span>");
                     });
                 }
@@ -136,11 +136,7 @@ function init() { // Execute after login succeed
 
             var res = wialon.core.Session.getInstance().getItem(ress[0].getId());
 
-            console.log(res);
-
             var zones = res.getZones();
-
-            console.log(zones);
 
             for (var drv in drivers) {
                 driver = drivers[drv]; // iterate all drivers
@@ -156,8 +152,6 @@ function init() { // Execute after login succeed
                 else
                     all_drivers[driver.bu].push(d_obj);
             }
-            console.log(all_drivers);
-
 
             for (var i = 0; i < list_unit.length; i++){
                 var u_id = list_unit[i].id;
@@ -174,10 +168,6 @@ function init() { // Execute after login succeed
                 }
             }
 
-
-
-
-            console.log(list_unit);
 
             localStorage.setItem("zones", JSON.stringify(zones));
 
@@ -200,6 +190,8 @@ function getList() {
     var div = document.getElementById("location");
     var spans = div.getElementsByTagName("span");
 
+    console.log(spans);
+
     for(i=0;i<spans.length;i++)
     {
         unit[i].position = spans[i].innerHTML
@@ -208,9 +200,14 @@ function getList() {
     for (i = 0 ; i < unit.length ; i++){
         unit[i].geofence = '';
         for (var k in zones){
-            if (unit[i].position == zones[k].d){
+
+            if ((unit[i].pos_x >= zones[k].b.min_x && unit[i].pos_x <= zones[k].b.max_x) && (unit[i].pos_y >= zones[k].b.min_y && unit[i].pos_y <= zones[k].b.max_y)) {
                 unit[i].geofence = zones[k].n;
             }
+
+            /*if (unit[i].position == zones[k].d){
+                unit[i].geofence = zones[k].n;
+            }*/
         }
     }
 
@@ -227,8 +224,6 @@ function getList() {
         }else {
             row += "<td>-</td>";
         }
-
-        /*row += "<td>SOON</td>";*/
 
         row += "<td>" + unit[i].position + "</td>";
 
