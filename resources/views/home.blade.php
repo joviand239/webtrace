@@ -44,7 +44,6 @@
                                                 <th>Time</th>
                                                 <th>Unit</th>
                                                 <th>Geofence</th>
-                                                <th>Position</th>
                                                 <th>Status</th>
                                                 <th>Muat/Bongkar</th>
                                             </tr>

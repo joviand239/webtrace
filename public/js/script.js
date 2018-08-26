@@ -225,7 +225,7 @@ function getList() {
             row += "<td>-</td>";
         }
 
-        row += "<td>" + unit[i].position + "</td>";
+        /*row += "<td>" + unit[i].position + "</td>";*/
 
 
         if (unit[i].geofence != ''){
