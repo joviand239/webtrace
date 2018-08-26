@@ -233,6 +233,8 @@ function getList() {
                 row += "<td>PTIP</td>";
             }else if (unit[i].geofence == 'IRS' || unit[i].geofence == 'IVI' || unit[i].geofence == 'IPCI'){
                 row += "<td>CUST</td>";
+            }else if (unit[i].geofence == 'PTIP'){
+                row += "<td>OTW</td>";
             }else {
                 row += "<td><input id='status"+i+"' type='text' class='form-control status-field'><span id='status-display"+i+"' class='hidden'></span></td>";
             }
