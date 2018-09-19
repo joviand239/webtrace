@@ -13,6 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 
-Auth::routes();
+Route::group(['prefix' => 'api/v1'], function () {
+    Route::get('/units/token/{token}', 'ApiController@getData');
+});
 
+
+Auth::routes();
 
