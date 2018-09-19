@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 
 Route::group(['prefix' => 'api/v1'], function () {
-    Route::get('/units/token/{token}', 'ApiController@getData');
+    Route::any('/units/token/{token}', 'ApiController@getData')->name('api.units');
 });
 
 
