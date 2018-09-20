@@ -8,17 +8,23 @@ use Illuminate\Http\Request;
 class ApiController extends Controller
 {
 
-    public function getData($token)
+    public function getData($key)
     {
+        $apiKey = 'b3nM1GMzGI';
+
         $wialonApi = 'https://hst-api.wialon.com/wialon/ajax.html';
 
         $restrictUnit = [
-            18015044,
+            '61 MKT', '62 MKT', '63 MKT', '64 MKT', '65 MKT', '67 MKT', '69 MKT', '70 MKT', '71 MKT', '72 MKT', '81 MKT', '82 MKT', '83 MKT', '84 MKT', '85 MKT'
         ];
 
-        if (!$token) {
-            return ResponseUtil::Unauthorized('Token Unauthorized, please check again');
+        if (!$key) {
+            return ResponseUtil::Unauthorized('Key Unauthorized, please check again');
+        }elseif ($key != $apiKey){
+            return ResponseUtil::Unauthorized('Key Unauthorized, please check again');
         }
+
+        $token = 'aa8973ca6e3ceb0a9cfa6df027dc11ffF5C47C5913FB976C41861B9BBF96623CC84ADFC2';
 
         $client = new \GuzzleHttp\Client();
         $response = $client->request('POST', $wialonApi, [
@@ -70,7 +76,7 @@ class ApiController extends Controller
 
         foreach ($listUnit as $key => $unit) {
 
-            if (in_array($unit->id, $restrictUnit)) {
+            if (in_array($unit->nm, $restrictUnit)) {
                 $tempunit = [
                     'name' => @$unit->nm,
                     'long' => @$unit->pos->x,
