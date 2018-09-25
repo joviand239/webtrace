@@ -75,12 +75,12 @@ class WialonService {
         foreach ($responseData as $key => $unit) {
 
             if (in_array($unit->nm, $restrictUnit) || !count($restrictUnit)) {
-                $lng = null;
-                $lat = null;
-                $time = null;
-                $speed = null;
-                $rawTime = null;
-                $address = [null];
+                $lng = 0;
+                $lat = 0;
+                $time = '';
+                $speed = '';
+                $rawTime = '';
+                $address = [''];
 
                 if ($unit->pos) {
                     $rawTime = @$unit->pos->t;

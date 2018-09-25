@@ -29,7 +29,7 @@ class ApiController extends Controller
         $list = WialonService::GetUnits($token, $restrictUnit);
 
 
-        return ResponseUtil::Success(['units' => @$list]);
+        return ResponseUtil::Success(['unit' => $list]);
     }
 
 
