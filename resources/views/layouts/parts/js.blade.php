@@ -3,4 +3,5 @@
 <script src="https://hst-api.wialon.com/wsdk/script/wialon.js?callback=someFunc" type="text/javascript"></script>
 <script src="{{ url('/') }}/js/jquery.validate.js" type="text/javascript"></script>
 <script src="{{ url('/') }}/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="{{ url('/') }}/js/script.js" type="text/javascript"></script>
+{{--
+<script src="{{ url('/') }}/js/script.js" type="text/javascript"></script>--}}

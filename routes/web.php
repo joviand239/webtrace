@@ -11,12 +11,14 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PageController@index');
 
 Route::group(['prefix' => 'api/v1'], function () {
     Route::any('/units/key/{key}', 'ApiController@getData')->name('api.units');
 });
 
+
+Route::get('/mms-data', 'PageController@getData');
 
 Auth::routes();
 
