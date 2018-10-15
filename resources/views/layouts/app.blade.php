@@ -13,6 +13,7 @@
     <!-- Styles -->
     @include('layouts.parts.css')
 
+    @yield('cssCustom')
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -28,10 +29,9 @@
 
         @include('layouts.parts.footer')
     </div>
-
-    @yield('js_custom')
-
     <!-- Scripts -->
     @include('layouts.parts.js')
+
+    @yield('jsCustom')
 </body>
 </html>

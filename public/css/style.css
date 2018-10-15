@@ -6,4 +6,8 @@
 .navbar-brand {
   text-transform: uppercase; }
 
+.navbar-brand {
+  font-size: 26px;
+  font-weight: 600; }
+
 /*# sourceMappingURL=style.css.map */
