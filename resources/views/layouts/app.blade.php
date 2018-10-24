@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Webtrace') }}</title>
+    <title>{{ config('app.name', 'CJL') }}</title>
 
     <!-- Styles -->
     @include('layouts.parts.css')

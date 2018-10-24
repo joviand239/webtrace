@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Service\WialonService;
+use App\Service\TracService;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -24,9 +24,12 @@ class PageController extends Controller
      */
     public function index()
     {
-        $token = '0956dd1275414f18f1f5f719d671b3c765DA023CE5CBED70D136ADFD27E0D1CBE8C1D208';
+        $credential = (object)[
+            'username' => 'pwpgps01@gmail.com',
+            'password' => '123456'
+        ];
 
-        $units = WialonService::GetUnits($token, []);
+        $units = TracService::GetUnits($credential);
 
 
         return view('home', [

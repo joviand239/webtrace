@@ -3,6 +3,9 @@
 <script src="{{ url('/') }}/js/popper.min.js"></script>
 <script src="{{ url('/') }}/js/bootstrap.min.js"></script>
 
+<script src="https://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.22&key=AIzaSyAbCDuELtDzS7jPb4OD6Rh0PXH7NT8mB3w"></script>
+<script src="{{ url('/') }}/library/maplace/js/maplace.min.js"></script>
+
 <script src="{{ url('/') }}/library/datatables/datatables.min.js" type="text/javascript"></script>
 <script src="{{ url('/') }}/library/datatables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
 <script src="{{ url('/') }}/library/datatables/button/js/dataTables.buttons.min.js" type="text/javascript"></script>

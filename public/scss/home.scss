@@ -24,3 +24,38 @@
   font-size: 26px;
   font-weight: 600;
 }
+
+#controls {
+  margin-bottom: 20px;
+
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    li {
+      width: 50%;
+
+      a {
+        transition: all 0.5s ease;
+
+        &:hover {
+          background: #dddddd;
+        }
+      }
+
+      &.active {
+
+        a {
+          background: #dddddd;
+        }
+
+      }
+    }
+  }
+}
+
+#gmap-menu {
+  height: 500px;
+}
+
