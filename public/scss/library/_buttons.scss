@@ -1,0 +1,57 @@
+/**
+ *  BUTTONS
+ */
+
+
+.btn {
+  padding: 7.5px 12.5px;
+  min-width: 125px;
+  font-size: 14px;
+  border-radius: 15px;
+  background: $main-color;
+  color: white;
+  text-decoration: none;
+  @include transition(all, 0.5s, ease);
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:focus {
+    color: white;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &.light {
+    background: $main-color-light;
+  }
+
+  &.dark {
+    background: $main-color-dark;
+  }
+
+  &.disabled {
+    cursor: default;
+    opacity: .4;
+    transform: none;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.btn-full {
+    width: 100%;
+    font-weight: 700;
+  }
+
+  &.form-btn {
+    padding: 15px;
+    width: 250px;
+    font-weight: 700;
+  }
+}
+
+

@@ -1,0 +1,81 @@
+/**
+ *  VARIABLES
+ *
+ *  Configure library by adjusting this file
+ *
+ */
+
+$body-bg:               #ffffff;
+$bg-gray:               #ebe5d8;
+
+$main-color:            #e02636;
+$main-color-light:      #bcced3;
+$main-color-dark:       #092d3f;
+
+$secondary-color:       #1ab374;
+$secondary-color-light: #38c98d;
+$secondary-bg:          #e6f1ee;
+
+$third-color:           #fef7e4;
+$third-bg:              #f7fcfc;
+
+$pink:                #ed1b52;
+
+
+$yellow:                #ffc00f;
+$yellow-dark:           #f7941e;
+
+$purple:                #a72360;
+$purple-dark:           #6e1844;
+
+$green:                #179349;
+$green-dark:           #00403a;
+
+
+$color-success:         #4caf50;
+$color-info:            #5bc0de;
+$color-warning:         #f0ad4e;
+$color-error:           #ffbdbd;
+
+// Borders
+$border-color:          #465f78;
+
+// Shadows
+$shadow-color:          rgba(0, 0, 0, .2);
+$box-shadow:            0 0 5px $shadow-color;
+
+// Social colors
+$fb: rgb(59, 89, 182);
+$tw: rgb(64, 153, 255);
+$googleplus: rgb(215, 61, 50);
+$pinterest: rgb(203, 32, 39);
+$skype: rgb(18, 165, 244);
+$spotify: rgb(129, 183, 26);
+$instagram: #c11c78;
+$tumblr: #2b4964;
+$vimeo: #86b32d;
+$soundcloud: #f76600;
+$youtube: #ff3333;
+$linkedin: #4875b4;
+$flickr: #fe0883;
+$foursquare: #8fd400;
+
+// Text colors
+$text-color:            #7c7c7c;       // deprecated. Use $text-body instead.
+$text-body:             $text-color;
+$text-gray:             #77787b;
+$light-gray:            #7c7c7c;
+
+
+/**
+ *  MEDIA QUERIES BREAKPOINTS
+ */
+
+$screen-xs:             0px;
+$screen-sm:             480px;
+$screen-md:             768px;
+$screen-lg:             1024px;
+$screen-wide:          1440px;
+
+
+$heading-weight:        500;

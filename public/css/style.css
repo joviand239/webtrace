@@ -1,31 +1,282 @@
-#home table thead th {
-  text-align: center; }
-#home .authorized {
+/**
+ *  VARIABLES
+ *
+ *  Configure library by adjusting this file
+ *
+ */
+/**
+ *  MEDIA QUERIES BREAKPOINTS
+ */
+/**
+ * Library
+ */
+/**
+ * MIXINS
+ */
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+/**
+ *  TYPOGRAPHY
+ */
+html {
+  overflow-x: hidden; }
+
+html, body {
+  background-color: #ffffff;
+  color: #7c7c7c;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px; }
+
+p {
+  margin-bottom: 10px;
+  font-size: 14px; }
+
+a {
+  color: #7c7c7c;
+  text-decoration: none !important; }
+  a:hover {
+    color: #7c7c7c; }
+  a:focus {
+    color: #7c7c7c; }
+
+img {
+  width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500; }
+
+/**
+ *  BUTTONS
+ */
+.btn {
+  padding: 7.5px 12.5px;
+  min-width: 125px;
+  font-size: 14px;
+  border-radius: 15px;
+  background: #e02636;
+  color: white;
+  text-decoration: none;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease; }
+  .btn:hover {
+    color: white;
+    text-decoration: none; }
+  .btn:focus {
+    color: white;
+    text-decoration: none;
+    outline: none; }
+  .btn.light {
+    background: #bcced3; }
+  .btn.dark {
+    background: #092d3f; }
+  .btn.disabled {
+    cursor: default;
+    opacity: .4;
+    transform: none; }
+  .btn.italic {
+    font-style: italic; }
+  .btn.btn-full {
+    width: 100%;
+    font-weight: 700; }
+  .btn.form-btn {
+    padding: 15px;
+    width: 250px;
+    font-weight: 700; }
+
+/*!
+ * Waves v0.6.0
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
+ * https://github.com/fians/Waves/blob/master/LICENSE
+ */
+.waves-effect {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+  z-index: 1;
+  transition: .3s ease-out; }
+  .waves-effect .waves-ripple {
+    position: absolute;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.7s ease-out;
+    transition-property: transform, opacity;
+    transform: scale(0);
+    pointer-events: none; }
+  .waves-effect.waves-light .waves-ripple {
+    background-color: rgba(255, 255, 255, 0.45); }
+  .waves-effect.waves-red .waves-ripple {
+    background-color: rgba(244, 67, 54, 0.7); }
+  .waves-effect.waves-yellow .waves-ripple {
+    background-color: rgba(255, 235, 59, 0.7); }
+  .waves-effect.waves-orange .waves-ripple {
+    background-color: rgba(255, 152, 0, 0.7); }
+  .waves-effect.waves-purple .waves-ripple {
+    background-color: rgba(156, 39, 176, 0.7); }
+  .waves-effect.waves-green .waves-ripple {
+    background-color: rgba(76, 175, 80, 0.7); }
+  .waves-effect.waves-teal .waves-ripple {
+    background-color: rgba(0, 150, 136, 0.7); }
+  .waves-effect input[type="button"], .waves-effect input[type="reset"], .waves-effect input[type="submit"] {
+    border: 0;
+    font-style: normal;
+    font-size: inherit;
+    text-transform: inherit;
+    background: none; }
+  .waves-effect img {
+    position: relative;
+    z-index: -1; }
+
+.waves-notransition {
+  transition: none !important; }
+
+.waves-circle {
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); }
+
+.waves-input-wrapper {
+  border-radius: 0.2em;
+  vertical-align: bottom; }
+  .waves-input-wrapper .waves-button-input {
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+
+.waves-circle {
+  text-align: center;
+  width: 2.5em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 50%;
+  -webkit-mask-image: none; }
+
+.waves-block {
+  display: block; }
+
+/* Firefox Bug: link not triggered */
+.waves-effect .waves-ripple {
+  z-index: -1; }
+
+.display-flex, #navbar, #navbar .account-wrapper, #navbar .account-wrapper .link, #navbar .account-wrapper .icon-circle, .login-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap; }
+
+.hidden {
   display: none; }
 
-.navbar-brand {
-  text-transform: uppercase; }
-
-.navbar-brand {
-  font-size: 26px;
-  font-weight: 600; }
-
-#controls {
-  margin-bottom: 20px; }
-  #controls ul {
-    display: flex;
+#navbar {
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+  box-shadow: 0px 0px 20px 5px #cbcbcb;
+  position: relative;
+  z-index: 100; }
+  #navbar .brand-wrapper .logo {
+    height: 50px;
+    width: auto; }
+  #navbar .account-wrapper {
+    font-size: 16px;
     align-items: center;
-    flex-wrap: wrap; }
-    #controls ul li {
-      width: 50%; }
-      #controls ul li a {
-        transition: all 0.5s ease; }
-        #controls ul li a:hover {
-          background: #dddddd; }
-      #controls ul li.active a {
-        background: #dddddd; }
+    font-weight: 500;
+    position: relative;
+    cursor: pointer; }
+    #navbar .account-wrapper .link {
+      align-items: center; }
+    #navbar .account-wrapper:hover .account-dropdown {
+      opacity: 1;
+      top: 140%; }
+    #navbar .account-wrapper .icon-circle {
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;
+      background: #dddddd;
+      color: white;
+      margin-right: 10px; }
+    #navbar .account-wrapper .account-dropdown {
+      opacity: 0;
+      padding: 0px;
+      margin: 0px;
+      list-style: none;
+      position: absolute;
+      width: 150px;
+      top: 120%;
+      background: white;
+      right: 0px;
+      box-shadow: 0px 0px 20px 5px #cbcbcb;
+      transition: all 0.5s ease;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease; }
+      #navbar .account-wrapper .account-dropdown .item {
+        padding: 5px 10px; }
 
-#gmap-menu {
-  height: 500px; }
+.login-wrapper {
+  height: calc(100vh - 70px);
+  align-items: center;
+  justify-content: center; }
+  .login-wrapper .login-box {
+    min-width: 480px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px 5px #cbcbcb; }
+
+.form-control {
+  padding: 10px; }
+
+.map-wrapper {
+  height: calc(100vh - 70px);
+  position: relative; }
+  .map-wrapper #gmap-menu {
+    height: 100%; }
+
+.control-wrapper {
+  position: absolute;
+  z-index: 100; }
+  .control-wrapper #controls ul::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5; }
+  .control-wrapper #controls ul::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #e02636; }
+  .control-wrapper #controls ul {
+    display: inline-block;
+    height: calc(100vh - 75px);
+    width: 250px;
+    background: white;
+    border-right: 5px solid #e02636;
+    overflow-y: scroll; }
+    .control-wrapper #controls ul li a {
+      transition: all 0.5s ease;
+      padding: 10px !important;
+      font-weight: 500;
+      font-size: 12px !important; }
+      .control-wrapper #controls ul li a:hover {
+        background: #dddddd; }
+    .control-wrapper #controls ul li.active a {
+      color: white !important;
+      padding: 10px !important;
+      background: #e02636; }
 
 /*# sourceMappingURL=style.css.map */

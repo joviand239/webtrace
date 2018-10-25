@@ -1,0 +1,44 @@
+/**
+ *  TYPOGRAPHY
+ */
+
+
+html {
+  overflow-x: hidden;
+}
+
+html, body {
+  background-color: $body-bg;
+  color: $text-body;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+a {
+  color: $text-color;
+  text-decoration: none !important;
+
+  &:hover {
+    color: $text-color;
+  }
+
+  &:focus {
+    color: $text-color;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $heading-weight;
+}

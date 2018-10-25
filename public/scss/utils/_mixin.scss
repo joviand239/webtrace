@@ -1,0 +1,28 @@
+/**
+ * MIXINS
+ */
+
+
+@mixin breakpoint($breakpoint, $query: 'min-width') {
+  $breakpoints: (
+          'breakpoint-xs': $screen-xs,
+          'breakpoint-sm': $screen-sm,
+          'breakpoint-md': $screen-md,
+          'breakpoint-lg': $screen-lg,
+          'breakpoint-wide': $screen-wide,
+  );
+
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (#{$query}: map-get($breakpoints, $breakpoint)) { @content; }
+  } @else {
+    @warn 'No breakpoint found for `#{$breakpoint}`. Allowed values are: #{map-keys($breakpoints)}.';
+  }
+}
+
+
+@mixin transition ($type, $duration, $format){
+  transition: $type $duration $format;
+  -webkit-transition: $type $duration $format;
+  -moz-transition: $type $duration $format;
+  -o-transition: $type $duration $format;
+}
