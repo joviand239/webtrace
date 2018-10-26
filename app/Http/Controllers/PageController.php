@@ -24,7 +24,9 @@ class PageController extends Controller
      */
     public function index()
     {
-        $token = '0956dd1275414f18f1f5f719d671b3c765DA023CE5CBED70D136ADFD27E0D1CBE8C1D208';
+        //$token = '0956dd1275414f18f1f5f719d671b3c765DA023CE5CBED70D136ADFD27E0D1CBE8C1D208';
+
+        $token = '3aac7ec203e360bc45ee55a6bd8c449303B2109BB4B7CC1EDC632A51AD1E758FE15D6D3E';
 
         $units = WialonService::GetUnits($token, []);
 
